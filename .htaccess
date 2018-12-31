@@ -1,0 +1,25 @@
+RewriteEngine On
+
+RewriteCond %{HTTPS} !=on
+
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteRule ^index$ index.php
+RewriteRule ^basisadministratie$ basisadministratie.php
+RewriteRule ^gegevens$ gegevens.php
+RewriteRule ^voertuigregistratie$ voertuigregistratie.php
+RewriteRule ^voertuiginformatie$ voertuiginformatie.php
+RewriteRule ^gebruikers$ users.php
+RewriteRule ^login$ login.php
+RewriteRule ^zoek$ zoek.php
+RewriteRule ^aangifte$ aangifte.php
+RewriteRule ^gms$ gms.php
+RewriteRule ^aangiftes$ aangiftes.php
+RewriteRule ^aangifteafschrift$ aangifteafschrift.php
+RewriteRule ^jaillog$ jaillog.php
+RewriteRule ^boete$ boete.php
+RewriteRule ^huiszoekingafschrift$ huiszoekingafschrift.php
+RewriteRule ^rdw$ rdw.php
+RewriteRule ^beveiligingscentrum$ beveiligingscentrum.php
+RewriteRule ^training$ training.php
+RewriteRule ^indexveh$ indexveh.php
