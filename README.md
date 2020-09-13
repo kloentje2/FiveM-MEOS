@@ -10,7 +10,7 @@ Helaas zie ik dat er mensen zijn die MEOS doorverkopen voor hoge prijzen. Ik zal
 In plaats daarvan maak ik het MEOS gewoon openbaar. Iedereen mag het gebruiken en het is absoluut welkom om mee te schrijven aan de code.
 Dan hoeven jullie ook niet meer te betalen, voor oneerlijk verkregen versies van MEOS
 
-Installeer het op je eigen server, zet mijn naam erbij en geniet ervan! Laat me dan ook even meekijken, hoe je het gebruikt. Ik loop graag eens met jouw politiekorps mee. 
+Installeer het op je eigen server, zet mijn naam erbij en geniet ervan! Laat me dan ook even meekijken, hoe je het gebruikt. Ik loop graag eens met jouw politiekorps mee. Blij met MEOS? Doneer gerust een euro of twee, misschien ook door je eigen leden. 
 
 Heb je ideeën? Wil je het verbeteren of wat veranderen? Dien gerust een PR in en ik kijk ernaar. Laten we er een project van maken dat voor jullie gebouwd is en ook deels door jullie. 
 
