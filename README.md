@@ -19,5 +19,7 @@ Contacteer me gerust als je lekker wilt kletsen over MEOS!
 Discord: Koen1997#2008
 
 Wil je mij bedanken voor mijn jarenlange prachtige project? Geef me dan gerust een kopje koffie!
+
 https://paypal.me/KoenHollander?locale.x=nl_NL
+
 https://betaalverzoek.rabobank.nl/betaalverzoek/?id=xdEDfLtjRNSS0ASt5On3aw
