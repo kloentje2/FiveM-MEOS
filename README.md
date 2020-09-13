@@ -25,4 +25,4 @@ https://betaalverzoek.rabobank.nl/betaalverzoek/?id=xdEDfLtjRNSS0ASt5On3aw
 
 P.s. Sommige mensen hebben MEOS bij mij afgenomen, deze facturatie gaat niet meer door en je hebt tot jan 2021 de tijd om data over te zetten naar je eigen server. Eind jan 2021 zal ik alle klanten schorsen, waardoor het niet meer bij mij staat. Vanaf nu zal ik ook geen nieuwe facturen maken, je kan er t/m jan 2021 gratis gebruik van maken. 
 
-Een klein deel van mijn inkomsten zijn meer dan mijn serverkosten, deze zal ik daarom belangeloos doneren aan FiveM
+Een klein deel van mijn inkomsten zijn meer dan mijn serverkosten, het meerbedrag zal ik daarom belangeloos doneren aan FiveM
