@@ -37,4 +37,4 @@ Het staat je ook vrij om dit zelf te doen
   Tweede configuratieblok: Je FiveM Database
   Derde configuratieblok: Je GMS database (heb je die niet? Zet dan `//` aan het begin van regel 30
   
-  
+MEOS die je hier kunt vinden is zoals het is, er kunnen fouten in zitten of veiligheidslekken. Dat is je eigen verantwoordelijkheid. Mocht je deze vinden, kun je altijd een PR indienen zodat anderen er geen last van hebben.
