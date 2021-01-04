@@ -3,7 +3,7 @@
 MEOS bestaat al enkele jaren, het is gemaakt in Dendam en daarna steeds verder uitgebouwd. 
 Het is een prachtig project, maar het is absoluut niet het beste project. 
 
-Het is één van mijn eerste echte projecten die ik daadwerkelijk af had gemaakt. Mensen gebruiken het momenteel masaal en het helpt extreem veel servers om een leuke RP neer te zetten. 
+Het is één van mijn eerste echte projecten die ik daadwerkelijk af had gemaakt. Mensen gebruiken het momenteel massaal en het helpt extreem veel servers om een leuke RP neer te zetten. 
 
 Helaas zie ik dat er mensen zijn die MEOS doorverkopen voor hoge prijzen. Ik zal daar niet over uitwijden in dit bericht, maar dat mag niet. Ik kan wel jaren lang procederen ertegen, maar daar heb ik dus absoluut geen zin in.
 
