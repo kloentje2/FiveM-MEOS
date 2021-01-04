@@ -2140,27 +2140,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `status`, `role`, `rang`, `name`, `specialisaties`, `last_login`, `2fa`, `salt`, `trainer`, `cjib`, `pin`, `app`, `secKey`) VALUES
-(1, 'admin', '$2y$10$4YbMjrQfZGvwdc2/f7x18.QlaGT1KYnrvfLDffoY3N/aDWIlTtI/K', 'active', 'admin', 'admin', 'SYSTEEM', '', '20-06-2020', NULL, '', 1, 1, NULL, '0', NULL),
-(15, 'khollander', '$2y$10$4YbMjrQfZGvwdc2/f7x18.QlaGT1KYnrvfLDffoY3N/aDWIlTtI/K', 'active', 'admin', 'Agent', 'K. Hollander', '', '30-07-2020', '', '5d064f4713a2e', 1, 1, NULL, '1', '1550864052627xR3TLmKW4InpMyeQzeFxhclKp492GciZ'),
-(192, 'tobiasv', '$2y$10$2dtCqraWWSv2EGuEObc9K.RJhGpGaimGe4UhXk2LGSt7JavrYTgq6', 'inactive', 'admin', '1e Hoofd Commissaris', 'T. de Vroed', '', '07-06-2020', NULL, NULL, 1, 1, NULL, '0', NULL),
-(196, 'damians', '$2y$10$WpwO5itNVAH1t2Cikn78WO.a1Eq2tIbE5uYNtGq4tN8N0GHRufFj2', 'active', 'admin', '1e Hoofd Commissaris', 'D. Bouwman', NULL, '18-06-2020', NULL, NULL, 1, 0, NULL, '0', NULL),
-(224, 'marktegelen', '$2y$10$sJc4mRO.LFw7Z/YyTo4ewuDaKrcQZenkHcjuuQRZPdY123f5PZejO', 'inactive', 'user', 'Commissaris', 'M. Tegelen', NULL, '16-06-2020', NULL, NULL, 1, 0, NULL, '0', NULL),
-(225, 'bjornvermaning', '$2y$10$r6AGen/GEWawyDgJ3N6cy.iNlW1Fbe6DYBaixnDhl2KI00WNjRY5W', 'active', 'user', 'Commissaris', 'B. Vermaning', NULL, '16-06-2020', NULL, NULL, 0, 0, NULL, '0', NULL),
-(226, 'larsjansen', '$2y$10$beJCCoW8BQZScTnXO3MFr./KxoV0N.3d4pgKNVEI4f8Mvt3Zfx95G', 'active', 'admin', 'Aspirant', 'L. Jansen', NULL, '21-07-2020', NULL, '5edf9278e8a35', 0, 0, NULL, '0', NULL),
-(227, 'yourisie', '$2y$10$RguzYxl8afpNl.DK.aXGp.8zuVtAvgkv4us1LzUPrJbyqqde4Dtr2', 'inactive', 'user', '1e Hoofd Commissaris', 'Y. Sie', NULL, '12-06-2020', NULL, NULL, 0, 0, NULL, '0', NULL),
-(228, 'keesbouwman', '$2y$10$3OK1NJ4Do8INK2UL0dqxremzzeLw36wrrH6ODUmqthFxV6ba0EhAG', 'inactive', 'user', 'Commissaris', 'K. Bouwman', NULL, '15-06-2020', NULL, NULL, 0, 0, NULL, '0', NULL),
-(229, 'lucbouwman', '$2y$10$ZiOTdJ8T3iFcXKjd77h6puwxb/rOmi5rv2sJm58fi4dvhxi3RmcN2', 'active', 'user', 'Surveillant', 'L. Bouwman', NULL, '21-07-2020', NULL, NULL, 0, 0, NULL, '0', NULL),
-(230, 'yoekbelt', '$2y$10$XS9lO6LrKvdwakOG.UmsGuWFu6ja7S9PHi3a2LJMDECSutLud1uKq', 'active', 'user', 'Agent', 'Y. Belt', NULL, '17-06-2020', NULL, NULL, 0, 0, NULL, '0', NULL),
-(231, 'mariogonzales', '$2y$10$PRXS/oXCwcRlErO8suCnmeM9ti2BaBy7Y9pHWL3XOw1pmEpBZQyV6', 'active', 'user', 'Surveillant', 'M. Gonzales', NULL, '08-06-2020', NULL, NULL, 0, 0, NULL, '0', NULL),
-(232, 'abamischijf', '$2y$10$SfPLIGecwr6PGVwTpleCFO8X9R2vyCo3ZEJ.98rXGLWOshbI5y6iS', 'inactive', 'user', 'Hoofd Agent', 'Ahmed Bamischijf', NULL, '16-06-2020', NULL, NULL, 0, 0, NULL, '0', NULL),
-(233, 'maxbouwman', '$2y$10$Z4nL3.jeFMpC2flYlgc9ZOKHRERFmGXIscp0J.mfTc1c/qd9ZDIZa', 'active', 'user', 'Inspecteur', 'M. Bouwman', NULL, '11-06-2020', NULL, NULL, 0, 0, NULL, '0', NULL),
-(234, 'henkkooikarper', '$2y$10$a24LXOMBJ8.OTAImlAQ2VOFzb84vq/mHr3yYzZUS9d96P/m2CpICq', 'active', 'user', 'Surveillant', 'H. Kooikarper', NULL, '14-06-2020', NULL, NULL, 0, 0, NULL, '0', NULL),
-(235, 'jantegiellissen', '$2y$10$jcEDn6fGGMv.voTvkqiBleI2ePVY1CfpGQ2HL3Tpq75K1TDi7t6Ie', 'active', 'user', 'Aspirant', 'J. Giellissen', NULL, '16-06-2020', NULL, NULL, 0, 0, NULL, '0', NULL),
-(239, 'yourisie1', '$2y$10$LASwr4Q0UbyJG3tVWcD3zuAh0Mt7f88teI7sF8gV7QKWGoh4xIfca', 'active', 'admin', '1e Hoofd Commissaris', 'Y. Sie', NULL, '21-06-2020', NULL, NULL, 0, 0, NULL, '0', NULL),
-(240, 'sanderwedding', '$2y$10$L2Vd/h4tmbQwJXQhxVeF6.3QSUo3f88wL3kIQVYdtRuqGfKUC38ne', 'active', 'user', 'Aspirant', 'S. Wedding', NULL, '23-07-2020', NULL, NULL, 0, 0, NULL, '0', NULL),
-(241, 'mgonzales', '$2y$10$HAMlT0TeaDQfoMNc2mfKSuRRI7Wr2AZXNuzTKL/twFjn.JckQucFq', 'active', 'user', 'Brigadier', 'Mario Gonzales', NULL, '15-06-2020', NULL, NULL, 0, 0, NULL, '0', NULL),
-(242, 'ssoldaat', '$2y$10$fRomi9kdTzwm0Os.pa7IjOtU0KZmFHEH0Z3Kb1eur9hjVElVA.0Zq', 'inactive', 'user', 'Surveillant', 'Sjaak Soldaat', NULL, '18-06-2020', NULL, NULL, 0, 0, NULL, '0', NULL),
-(243, 'boyke', '$2y$10$wHvMAHOjFg7PG4/y7W8AiOMUP0jV1aJ6UQjWPPPGdjGXUN4WT8cMm', 'active', 'admin', 'Aspirant', 'boyke', NULL, '30-07-2020', NULL, NULL, 0, 0, NULL, '0', NULL);
+(1, 'admin', '$2y$10$MMcDXDdapaqJzeMH/EL.a.vC0z/sC7MURJ3SUTfRJdhWTEd0BQpRe', 'active', 'admin', 'admin', 'SYSTEEM', '', '20-06-2020', NULL, '', 1, 1, NULL, '0', NULL),
 
 --
 -- Indexen voor geëxporteerde tabellen
