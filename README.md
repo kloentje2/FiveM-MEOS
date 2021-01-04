@@ -23,6 +23,18 @@ Wil je mij bedanken voor mijn jarenlange prachtige project? Geef me dan gerust e
 https://betaalverzoek.rabobank.nl/betaalverzoek/?id=xdEDfLtjRNSS0ASt5On3aw
 
 
-P.s. Sommige mensen hebben MEOS bij mij afgenomen, deze facturatie gaat niet meer door en je hebt tot jan 2021 de tijd om data over te zetten naar je eigen server. Eind jan 2021 zal ik alle klanten schorsen, waardoor het niet meer bij mij staat. Vanaf nu zal ik ook geen nieuwe facturen maken, je kan er t/m jan 2021 gratis gebruik van maken. 
+P.s. Sommige mensen hebben MEOS bij mij afgenomen, deze facturatie gaat niet meer door en je hebt tot maart 2021 de tijd om data over te zetten naar je eigen server. Eind jan 2021 zal ik alle klanten schorsen, waardoor het niet meer bij mij staat. Vanaf nu zal ik ook geen nieuwe facturen maken, je kan er t/m jan 2021 gratis gebruik van maken. 
 
 Een klein deel van mijn inkomsten zijn meer dan mijn serverkosten, het meerbedrag zal ik daarom belangeloos doneren aan FiveM
+
+Wil je MEOS installeren? Je kan mij inhuren om dat voor je te doen. Contacteer me gerust op Discord. 
+Het staat je ook vrij om dit zelf te doen
+
+1. Plaats alle documenten (behalve de database) in je publieke map 
+2. Importeer het SQL bestand in je database
+3. Ga naar config.php en voer de gegevens in 
+  Eerste configuratieblok: Je MEOS database
+  Tweede configuratieblok: Je FiveM Database
+  Derde configuratieblok: Je GMS database (heb je die niet? Zet dan `//` aan het begin van regel 30
+  
+  
