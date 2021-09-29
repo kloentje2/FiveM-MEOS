@@ -1,34 +1,18 @@
--- phpMyAdmin SQL Dump
--- version 4.9.3
--- https://www.phpmyadmin.net/
---
--- Host: localhost
--- Gegenereerd op: 04 jan 2021 om 16:12
--- Serverversie: 5.6.45
--- PHP-versie: 7.1.33
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `leiderdam_meos`
---
-
+-- --------------------------------------------------------
+-- Host:                         5.255.90.119
+-- Server versie:                10.3.31-MariaDB - MariaDB Server
+-- Server OS:                    Linux
+-- HeidiSQL Versie:              11.0.0.5919
 -- --------------------------------------------------------
 
---
--- Tabelstructuur voor tabel `aangifte`
---
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-CREATE TABLE `aangifte` (
+-- Structuur van  tabel termuidenmeos.aangifte wordt geschreven
+CREATE TABLE IF NOT EXISTS `aangifte` (
   `id` int(255) NOT NULL,
   `aangever_voornaam` varchar(255) NOT NULL,
   `aangever_achternaam` varchar(255) NOT NULL,
@@ -38,79 +22,75 @@ CREATE TABLE `aangifte` (
   `pleegtijd` varchar(255) NOT NULL,
   `verbalisant` varchar(255) NOT NULL,
   `verklaring` text NOT NULL,
-  `opnamedatum` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `opnamedatum` datetime NOT NULL DEFAULT current_timestamp(),
   `status` enum('open','closed','hold') NOT NULL DEFAULT 'open',
-  `behandelaar` varchar(255) DEFAULT NULL
+  `behandelaar` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
+-- Dumpen data van tabel termuidenmeos.aangifte: ~0 rows (ongeveer)
+/*!40000 ALTER TABLE `aangifte` DISABLE KEYS */;
+/*!40000 ALTER TABLE `aangifte` ENABLE KEYS */;
 
---
--- Tabelstructuur voor tabel `aangifte_reacties`
---
-
-CREATE TABLE `aangifte_reacties` (
+-- Structuur van  tabel termuidenmeos.aangifte_reacties wordt geschreven
+CREATE TABLE IF NOT EXISTS `aangifte_reacties` (
   `id` int(255) NOT NULL,
   `aangifte` int(255) NOT NULL,
   `reactie` text NOT NULL,
   `author` varchar(50) NOT NULL,
-  `datetime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `datetime` datetime NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- Dumpen data van tabel termuidenmeos.aangifte_reacties: ~0 rows (ongeveer)
+/*!40000 ALTER TABLE `aangifte_reacties` DISABLE KEYS */;
+/*!40000 ALTER TABLE `aangifte_reacties` ENABLE KEYS */;
 
--- --------------------------------------------------------
-
---
--- Tabelstructuur voor tabel `anotitie`
---
-
-CREATE TABLE `anotitie` (
+-- Structuur van  tabel termuidenmeos.anotitie wordt geschreven
+CREATE TABLE IF NOT EXISTS `anotitie` (
   `id` int(255) NOT NULL,
   `user_id` int(255) NOT NULL,
   `text` text NOT NULL,
-  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `date` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Gegevens worden geëxporteerd voor tabel `anotitie`
---
+-- Dumpen data van tabel termuidenmeos.anotitie: 0 rows
+/*!40000 ALTER TABLE `anotitie` DISABLE KEYS */;
+/*!40000 ALTER TABLE `anotitie` ENABLE KEYS */;
 
-
---
--- Tabelstructuur voor tabel `app_activations`
---
-
-CREATE TABLE `app_activations` (
+-- Structuur van  tabel termuidenmeos.app_activations wordt geschreven
+CREATE TABLE IF NOT EXISTS `app_activations` (
   `id` int(255) NOT NULL,
   `userid` int(255) NOT NULL,
   `app_identifier` varchar(255) NOT NULL,
-  `status` enum('active','banned') NOT NULL DEFAULT 'active'
+  `status` enum('active','banned') NOT NULL DEFAULT 'active',
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
+-- Dumpen data van tabel termuidenmeos.app_activations: ~0 rows (ongeveer)
+/*!40000 ALTER TABLE `app_activations` DISABLE KEYS */;
+/*!40000 ALTER TABLE `app_activations` ENABLE KEYS */;
 
---
--- Tabelstructuur voor tabel `beslaglog`
---
-
-CREATE TABLE `beslaglog` (
+-- Structuur van  tabel termuidenmeos.beslaglog wordt geschreven
+CREATE TABLE IF NOT EXISTS `beslaglog` (
   `id` int(255) NOT NULL,
   `agent` varchar(255) NOT NULL DEFAULT '0',
   `burger` varchar(255) NOT NULL DEFAULT '0',
   `kenteken` varchar(255) NOT NULL DEFAULT '0',
   `voertuig` varchar(255) NOT NULL DEFAULT '0',
-  `datetime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `datetime` datetime NOT NULL DEFAULT current_timestamp(),
   `ip` varchar(255) NOT NULL DEFAULT '0',
-  `updated` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `updated` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
+-- Dumpen data van tabel termuidenmeos.beslaglog: ~0 rows (ongeveer)
+/*!40000 ALTER TABLE `beslaglog` DISABLE KEYS */;
+/*!40000 ALTER TABLE `beslaglog` ENABLE KEYS */;
 
---
--- Tabelstructuur voor tabel `cjib`
---
-
-CREATE TABLE `cjib` (
+-- Structuur van  tabel termuidenmeos.cjib wordt geschreven
+CREATE TABLE IF NOT EXISTS `cjib` (
   `id` int(255) NOT NULL,
   `number` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -126,31 +106,31 @@ CREATE TABLE `cjib` (
   `owned_stuff` text NOT NULL,
   `owned_properties` text NOT NULL,
   `status` enum('open','wanted','closed') NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
+-- Dumpen data van tabel termuidenmeos.cjib: 0 rows
+/*!40000 ALTER TABLE `cjib` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cjib` ENABLE KEYS */;
 
---
--- Tabelstructuur voor tabel `huiszoekinglog`
---
-
-CREATE TABLE `huiszoekinglog` (
+-- Structuur van  tabel termuidenmeos.huiszoekinglog wordt geschreven
+CREATE TABLE IF NOT EXISTS `huiszoekinglog` (
   `id` int(255) NOT NULL,
   `agent` varchar(255) NOT NULL DEFAULT '0',
   `burger` varchar(255) NOT NULL DEFAULT '0',
-  `datetime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `datetime` datetime NOT NULL DEFAULT current_timestamp(),
   `ip` varchar(255) NOT NULL DEFAULT '0',
-  `updated` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `updated` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
+-- Dumpen data van tabel termuidenmeos.huiszoekinglog: ~0 rows (ongeveer)
+/*!40000 ALTER TABLE `huiszoekinglog` DISABLE KEYS */;
+/*!40000 ALTER TABLE `huiszoekinglog` ENABLE KEYS */;
 
---
--- Tabelstructuur voor tabel `i8`
---
-
-CREATE TABLE `i8` (
+-- Structuur van  tabel termuidenmeos.i8 wordt geschreven
+CREATE TABLE IF NOT EXISTS `i8` (
   `id` int(255) NOT NULL,
   `userid` int(255) NOT NULL,
   `datum_1` varchar(255) NOT NULL,
@@ -176,196 +156,178 @@ CREATE TABLE `i8` (
   `toegepast_vuurwapen` int(255) DEFAULT NULL,
   `toegepast_wapenstok` int(255) DEFAULT NULL,
   `beoordeeld_door_id` int(255) DEFAULT NULL,
-  `status` int(255) NOT NULL DEFAULT '0'
+  `status` int(255) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
+-- Dumpen data van tabel termuidenmeos.i8: 0 rows
+/*!40000 ALTER TABLE `i8` DISABLE KEYS */;
+/*!40000 ALTER TABLE `i8` ENABLE KEYS */;
 
---
--- Tabelstructuur voor tabel `informatie`
---
-
-CREATE TABLE `informatie` (
+-- Structuur van  tabel termuidenmeos.informatie wordt geschreven
+CREATE TABLE IF NOT EXISTS `informatie` (
   `id` int(255) NOT NULL,
   `gameid` int(255) NOT NULL,
   `verbalisant` varchar(255) NOT NULL,
   `datum` varchar(255) NOT NULL,
   `notitie` text NOT NULL,
   `sanctie` varchar(255) NOT NULL,
-  `gesignaleerd` varchar(255) DEFAULT NULL
+  `gesignaleerd` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- Dumpen data van tabel termuidenmeos.informatie: ~0 rows (ongeveer)
+/*!40000 ALTER TABLE `informatie` DISABLE KEYS */;
+/*!40000 ALTER TABLE `informatie` ENABLE KEYS */;
 
-
--- --------------------------------------------------------
-
---
--- Tabelstructuur voor tabel `invorderlog`
---
-
-CREATE TABLE `invorderlog` (
+-- Structuur van  tabel termuidenmeos.invorderlog wordt geschreven
+CREATE TABLE IF NOT EXISTS `invorderlog` (
   `id` int(255) NOT NULL,
   `agent` varchar(255) NOT NULL DEFAULT '0',
   `burger` varchar(255) NOT NULL DEFAULT '0',
-  `datetime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `datetime` datetime NOT NULL DEFAULT current_timestamp(),
   `ip` varchar(255) NOT NULL DEFAULT '0',
-  `updated` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `updated` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- Dumpen data van tabel termuidenmeos.invorderlog: ~0 rows (ongeveer)
+/*!40000 ALTER TABLE `invorderlog` DISABLE KEYS */;
+/*!40000 ALTER TABLE `invorderlog` ENABLE KEYS */;
 
-
--- --------------------------------------------------------
-
---
--- Tabelstructuur voor tabel `kladblok`
---
-
-CREATE TABLE `kladblok` (
+-- Structuur van  tabel termuidenmeos.kladblok wordt geschreven
+CREATE TABLE IF NOT EXISTS `kladblok` (
   `id` int(255) NOT NULL,
   `userid` int(255) NOT NULL,
-  `text` text NOT NULL
+  `text` text NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Gegevens worden geëxporteerd voor tabel `kladblok`
---
+-- Dumpen data van tabel termuidenmeos.kladblok: ~0 rows (ongeveer)
+/*!40000 ALTER TABLE `kladblok` DISABLE KEYS */;
+/*!40000 ALTER TABLE `kladblok` ENABLE KEYS */;
 
-
-
---
--- Tabelstructuur voor tabel `livelog`
---
-
-CREATE TABLE `livelog` (
+-- Structuur van  tabel termuidenmeos.livelog wordt geschreven
+CREATE TABLE IF NOT EXISTS `livelog` (
   `id` int(255) NOT NULL,
   `agent` varchar(255) NOT NULL,
   `burger` varchar(255) NOT NULL,
-  `datetime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `datetime` datetime NOT NULL DEFAULT current_timestamp(),
   `burgerid` int(255) NOT NULL,
-  `ip` varchar(255) DEFAULT NULL
+  `ip` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Gegevens worden geëxporteerd voor tabel `livelog`
---
+-- Dumpen data van tabel termuidenmeos.livelog: ~0 rows (ongeveer)
+/*!40000 ALTER TABLE `livelog` DISABLE KEYS */;
+/*!40000 ALTER TABLE `livelog` ENABLE KEYS */;
 
-
-
--- --------------------------------------------------------
-
---
--- Tabelstructuur voor tabel `pagevisitlog`
---
-
-CREATE TABLE `pagevisitlog` (
+-- Structuur van  tabel termuidenmeos.pagevisitlog wordt geschreven
+CREATE TABLE IF NOT EXISTS `pagevisitlog` (
   `id` int(255) NOT NULL,
   `uri` varchar(255) NOT NULL,
   `ip` varchar(50) NOT NULL,
-  `datetime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `datetime` datetime NOT NULL DEFAULT current_timestamp(),
   `_SERVER` longtext NOT NULL,
   `_SESSION` longtext NOT NULL,
   `_POST` longtext NOT NULL,
-  `_GET` longtext NOT NULL
+  `_GET` longtext NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
+-- Dumpen data van tabel termuidenmeos.pagevisitlog: 0 rows
+/*!40000 ALTER TABLE `pagevisitlog` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pagevisitlog` ENABLE KEYS */;
 
---
--- Tabelstructuur voor tabel `rdwlog`
---
-
-CREATE TABLE `rdwlog` (
+-- Structuur van  tabel termuidenmeos.rdwlog wordt geschreven
+CREATE TABLE IF NOT EXISTS `rdwlog` (
   `id` int(255) NOT NULL,
-  `voertuigid` int(255) NOT NULL DEFAULT '0',
-  `reason` text,
+  `voertuigid` int(255) NOT NULL DEFAULT 0,
+  `reason` text DEFAULT NULL,
   `plate` varchar(255) DEFAULT NULL,
   `action` varchar(255) NOT NULL DEFAULT '0',
   `ip` varchar(255) NOT NULL DEFAULT '0',
-  `user` int(255) NOT NULL DEFAULT '0',
-  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `user` int(255) NOT NULL DEFAULT 0,
+  `date` datetime NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
+-- Dumpen data van tabel termuidenmeos.rdwlog: 0 rows
+/*!40000 ALTER TABLE `rdwlog` DISABLE KEYS */;
+/*!40000 ALTER TABLE `rdwlog` ENABLE KEYS */;
 
---
--- Tabelstructuur voor tabel `rdwwok`
---
-
-CREATE TABLE `rdwwok` (
+-- Structuur van  tabel termuidenmeos.rdwwok wordt geschreven
+CREATE TABLE IF NOT EXISTS `rdwwok` (
   `id` int(255) NOT NULL,
   `voertuigid` int(255) NOT NULL,
-  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `reason` text NOT NULL
+  `date` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `reason` text NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Gegevens worden geëxporteerd voor tabel `rdwwok`
---
+-- Dumpen data van tabel termuidenmeos.rdwwok: ~0 rows (ongeveer)
+/*!40000 ALTER TABLE `rdwwok` DISABLE KEYS */;
+/*!40000 ALTER TABLE `rdwwok` ENABLE KEYS */;
 
--- --------------------------------------------------------
-
---
--- Tabelstructuur voor tabel `recherche`
---
-
-CREATE TABLE `recherche` (
+-- Structuur van  tabel termuidenmeos.recherche wordt geschreven
+CREATE TABLE IF NOT EXISTS `recherche` (
   `id` int(255) NOT NULL,
   `rechercheur` varchar(255) NOT NULL,
   `notitie` text NOT NULL,
-  `datum` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `burger` int(255) NOT NULL
+  `datum` datetime NOT NULL DEFAULT current_timestamp(),
+  `burger` int(255) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
+-- Dumpen data van tabel termuidenmeos.recherche: ~0 rows (ongeveer)
+/*!40000 ALTER TABLE `recherche` DISABLE KEYS */;
+/*!40000 ALTER TABLE `recherche` ENABLE KEYS */;
 
---
--- Tabelstructuur voor tabel `shadow_rijbewijzen`
---
-
-CREATE TABLE `shadow_rijbewijzen` (
+-- Structuur van  tabel termuidenmeos.shadow_rijbewijzen wordt geschreven
+CREATE TABLE IF NOT EXISTS `shadow_rijbewijzen` (
   `id` int(255) NOT NULL,
   `rijbewijzen` text NOT NULL,
-  `user_id` int(255) NOT NULL
+  `user_id` int(255) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
+-- Dumpen data van tabel termuidenmeos.shadow_rijbewijzen: 0 rows
+/*!40000 ALTER TABLE `shadow_rijbewijzen` DISABLE KEYS */;
+/*!40000 ALTER TABLE `shadow_rijbewijzen` ENABLE KEYS */;
 
---
--- Tabelstructuur voor tabel `specialisaties`
---
-
-CREATE TABLE `specialisaties` (
+-- Structuur van  tabel termuidenmeos.specialisaties wordt geschreven
+CREATE TABLE IF NOT EXISTS `specialisaties` (
   `id` int(255) NOT NULL,
   `name` varchar(255) NOT NULL DEFAULT '0',
   `short` varchar(255) NOT NULL DEFAULT '0',
   `docent` varchar(255) NOT NULL DEFAULT '0',
-  `toelatingsrangen` text,
-  `beloningspromotie` text,
+  `toelatingsrangen` text DEFAULT NULL,
+  `beloningspromotie` text DEFAULT NULL,
   `created_by` varchar(255) NOT NULL DEFAULT '0',
   `ip` varchar(255) NOT NULL DEFAULT '0',
-  `created_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `created_on` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_on` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
+-- Dumpen data van tabel termuidenmeos.specialisaties: 0 rows
+/*!40000 ALTER TABLE `specialisaties` DISABLE KEYS */;
+/*!40000 ALTER TABLE `specialisaties` ENABLE KEYS */;
 
---
--- Tabelstructuur voor tabel `specialisatie_aanmeldingen`
---
-
-CREATE TABLE `specialisatie_aanmeldingen` (
+-- Structuur van  tabel termuidenmeos.specialisatie_aanmeldingen wordt geschreven
+CREATE TABLE IF NOT EXISTS `specialisatie_aanmeldingen` (
   `id` int(255) NOT NULL,
   `specialisatie` int(255) NOT NULL,
-  `user` int(255) NOT NULL
+  `user` int(255) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
+-- Dumpen data van tabel termuidenmeos.specialisatie_aanmeldingen: 0 rows
+/*!40000 ALTER TABLE `specialisatie_aanmeldingen` DISABLE KEYS */;
+/*!40000 ALTER TABLE `specialisatie_aanmeldingen` ENABLE KEYS */;
 
---
--- Tabelstructuur voor tabel `users`
---
-
-CREATE TABLE `users` (
+-- Structuur van  tabel termuidenmeos.users wordt geschreven
+CREATE TABLE IF NOT EXISTS `users` (
   `id` int(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -373,286 +335,23 @@ CREATE TABLE `users` (
   `role` enum('admin','om','anwb','user') NOT NULL,
   `rang` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `specialisaties` text,
+  `specialisaties` text DEFAULT NULL,
   `last_login` varchar(255) DEFAULT NULL,
   `2fa` varchar(255) DEFAULT NULL,
   `salt` varchar(255) DEFAULT NULL,
-  `trainer` tinyint(1) NOT NULL DEFAULT '0',
-  `cjib` tinyint(1) NOT NULL DEFAULT '0',
+  `trainer` tinyint(1) NOT NULL DEFAULT 0,
+  `cjib` tinyint(1) NOT NULL DEFAULT 0,
   `pin` int(6) DEFAULT NULL,
   `app` enum('0','1') NOT NULL DEFAULT '0',
-  `secKey` varchar(255) DEFAULT NULL
+  `secKey` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `Index 2` (`secKey`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Gegevens worden geëxporteerd voor tabel `users`
---
+-- Dumpen data van tabel termuidenmeos.users: ~0 rows (ongeveer)
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
-INSERT INTO `users` (`id`, `username`, `password`, `status`, `role`, `rang`, `name`, `specialisaties`, `last_login`, `2fa`, `salt`, `trainer`, `cjib`, `pin`, `app`, `secKey`) VALUES
-(1, 'admin', '$2y$10$MMcDXDdapaqJzeMH/EL.a.vC0z/sC7MURJ3SUTfRJdhWTEd0BQpRe', 'active', 'admin', 'admin', 'SYSTEEM', '', '20-06-2020', NULL, '', 1, 1, NULL, '0', NULL),
-
---
--- Indexen voor geëxporteerde tabellen
---
-
---
--- Indexen voor tabel `aangifte`
---
-
-
---
--- Indexen voor tabel `aangifte_old`
---
-ALTER TABLE `aangifte_old`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexen voor tabel `aangifte_reacties`
---
-ALTER TABLE `aangifte_reacties`
-  ADD KEY `Index 1` (`id`);
-
---
--- Indexen voor tabel `anotitie`
---
-ALTER TABLE `anotitie`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexen voor tabel `app_activations`
---
-ALTER TABLE `app_activations`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `app_identifier` (`app_identifier`);
-
---
--- Indexen voor tabel `beslaglog`
---
-ALTER TABLE `beslaglog`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexen voor tabel `cjib`
---
-ALTER TABLE `cjib`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `number` (`number`);
-
---
--- Indexen voor tabel `huiszoekinglog`
---
-ALTER TABLE `huiszoekinglog`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexen voor tabel `i8`
---
-ALTER TABLE `i8`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexen voor tabel `informatie`
---
-ALTER TABLE `informatie`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexen voor tabel `invorderlog`
---
-ALTER TABLE `invorderlog`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexen voor tabel `kladblok`
---
-ALTER TABLE `kladblok`
-  ADD KEY `Index 1` (`id`);
-
---
--- Indexen voor tabel `livelog`
---
-ALTER TABLE `livelog`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexen voor tabel `pagevisitlog`
---
-ALTER TABLE `pagevisitlog`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexen voor tabel `rdwlog`
---
-ALTER TABLE `rdwlog`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexen voor tabel `rdwwok`
---
-ALTER TABLE `rdwwok`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `Index 2` (`voertuigid`);
-
---
--- Indexen voor tabel `recherche`
---
-ALTER TABLE `recherche`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexen voor tabel `shadow_rijbewijzen`
---
-ALTER TABLE `shadow_rijbewijzen`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexen voor tabel `specialisaties`
---
-ALTER TABLE `specialisaties`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `Index 2` (`short`);
-
---
--- Indexen voor tabel `specialisatie_aanmeldingen`
---
-ALTER TABLE `specialisatie_aanmeldingen`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexen voor tabel `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `username` (`username`,`name`);
-
---
--- AUTO_INCREMENT voor geëxporteerde tabellen
---
-
---
--- AUTO_INCREMENT voor een tabel `aangifte`
---
-ALTER TABLE `aangifte`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT voor een tabel `aangifte_old`
---
-ALTER TABLE `aangifte_old`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT voor een tabel `aangifte_reacties`
---
-ALTER TABLE `aangifte_reacties`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
-
---
--- AUTO_INCREMENT voor een tabel `anotitie`
---
-ALTER TABLE `anotitie`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
-
---
--- AUTO_INCREMENT voor een tabel `app_activations`
---
-ALTER TABLE `app_activations`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT voor een tabel `beslaglog`
---
-ALTER TABLE `beslaglog`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
-
---
--- AUTO_INCREMENT voor een tabel `cjib`
---
-ALTER TABLE `cjib`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
-
---
--- AUTO_INCREMENT voor een tabel `huiszoekinglog`
---
-ALTER TABLE `huiszoekinglog`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
-
---
--- AUTO_INCREMENT voor een tabel `i8`
---
-ALTER TABLE `i8`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
-
---
--- AUTO_INCREMENT voor een tabel `informatie`
---
-ALTER TABLE `informatie`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
-
---
--- AUTO_INCREMENT voor een tabel `invorderlog`
---
-ALTER TABLE `invorderlog`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
-
---
--- AUTO_INCREMENT voor een tabel `kladblok`
---
-ALTER TABLE `kladblok`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
-
---
--- AUTO_INCREMENT voor een tabel `livelog`
---
-ALTER TABLE `livelog`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
-
---
--- AUTO_INCREMENT voor een tabel `pagevisitlog`
---
-ALTER TABLE `pagevisitlog`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT voor een tabel `rdwlog`
---
-ALTER TABLE `rdwlog`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
-
---
--- AUTO_INCREMENT voor een tabel `rdwwok`
---
-ALTER TABLE `rdwwok`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
-
---
--- AUTO_INCREMENT voor een tabel `recherche`
---
-ALTER TABLE `recherche`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT voor een tabel `specialisaties`
---
-ALTER TABLE `specialisaties`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
-
---
--- AUTO_INCREMENT voor een tabel `specialisatie_aanmeldingen`
---
-ALTER TABLE `specialisatie_aanmeldingen`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
-
---
--- AUTO_INCREMENT voor een tabel `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
-COMMIT;
-
-ALTER TABLE `aangifte`
-  ADD PRIMARY KEY (`id`);
-
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
