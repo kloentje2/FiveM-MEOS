@@ -13,7 +13,7 @@
 
 -- Structuur van  tabel termuidenmeos.aangifte wordt geschreven
 CREATE TABLE IF NOT EXISTS `aangifte` (
-  `id` int(255) NOT NULL,
+  `id` int(255) NOT NULL AUTO_INCREMENT,
   `aangever_voornaam` varchar(255) NOT NULL,
   `aangever_achternaam` varchar(255) NOT NULL,
   `aangever_geslacht` varchar(255) NOT NULL,
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `aangifte` (
 
 -- Structuur van  tabel termuidenmeos.aangifte_reacties wordt geschreven
 CREATE TABLE IF NOT EXISTS `aangifte_reacties` (
-  `id` int(255) NOT NULL,
+  `id` int(255) NOT NULL AUTO_INCREMENT,
   `aangifte` int(255) NOT NULL,
   `reactie` text NOT NULL,
   `author` varchar(50) NOT NULL,
@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `aangifte_reacties` (
 
 -- Structuur van  tabel termuidenmeos.anotitie wordt geschreven
 CREATE TABLE IF NOT EXISTS `anotitie` (
-  `id` int(255) NOT NULL,
+  `id` int(255) NOT NULL AUTO_INCREMENT,
   `user_id` int(255) NOT NULL,
   `text` text NOT NULL,
   `date` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `anotitie` (
 
 -- Structuur van  tabel termuidenmeos.app_activations wordt geschreven
 CREATE TABLE IF NOT EXISTS `app_activations` (
-  `id` int(255) NOT NULL,
+  `id` int(255) NOT NULL AUTO_INCREMENT,
   `userid` int(255) NOT NULL,
   `app_identifier` varchar(255) NOT NULL,
   `status` enum('active','banned') NOT NULL DEFAULT 'active',
@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS `app_activations` (
 
 -- Structuur van  tabel termuidenmeos.beslaglog wordt geschreven
 CREATE TABLE IF NOT EXISTS `beslaglog` (
-  `id` int(255) NOT NULL,
+  `id` int(255) NOT NULL AUTO_INCREMENT,
   `agent` varchar(255) NOT NULL DEFAULT '0',
   `burger` varchar(255) NOT NULL DEFAULT '0',
   `kenteken` varchar(255) NOT NULL DEFAULT '0',
@@ -91,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `beslaglog` (
 
 -- Structuur van  tabel termuidenmeos.cjib wordt geschreven
 CREATE TABLE IF NOT EXISTS `cjib` (
-  `id` int(255) NOT NULL,
+  `id` int(255) NOT NULL AUTO_INCREMENT,
   `number` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `steam` varchar(255) NOT NULL,
@@ -116,7 +116,7 @@ CREATE TABLE IF NOT EXISTS `cjib` (
 
 -- Structuur van  tabel termuidenmeos.huiszoekinglog wordt geschreven
 CREATE TABLE IF NOT EXISTS `huiszoekinglog` (
-  `id` int(255) NOT NULL,
+  `id` int(255) NOT NULL AUTO_INCREMENT,
   `agent` varchar(255) NOT NULL DEFAULT '0',
   `burger` varchar(255) NOT NULL DEFAULT '0',
   `datetime` datetime NOT NULL DEFAULT current_timestamp(),
@@ -131,7 +131,7 @@ CREATE TABLE IF NOT EXISTS `huiszoekinglog` (
 
 -- Structuur van  tabel termuidenmeos.i8 wordt geschreven
 CREATE TABLE IF NOT EXISTS `i8` (
-  `id` int(255) NOT NULL,
+  `id` int(255) NOT NULL AUTO_INCREMENT,
   `userid` int(255) NOT NULL,
   `datum_1` varchar(255) NOT NULL,
   `datum_2` varchar(255) NOT NULL,
@@ -166,7 +166,7 @@ CREATE TABLE IF NOT EXISTS `i8` (
 
 -- Structuur van  tabel termuidenmeos.informatie wordt geschreven
 CREATE TABLE IF NOT EXISTS `informatie` (
-  `id` int(255) NOT NULL,
+  `id` int(255) NOT NULL AUTO_INCREMENT,
   `gameid` int(255) NOT NULL,
   `verbalisant` varchar(255) NOT NULL,
   `datum` varchar(255) NOT NULL,
@@ -182,7 +182,7 @@ CREATE TABLE IF NOT EXISTS `informatie` (
 
 -- Structuur van  tabel termuidenmeos.invorderlog wordt geschreven
 CREATE TABLE IF NOT EXISTS `invorderlog` (
-  `id` int(255) NOT NULL,
+  `id` int(255) NOT NULL AUTO_INCREMENT,
   `agent` varchar(255) NOT NULL DEFAULT '0',
   `burger` varchar(255) NOT NULL DEFAULT '0',
   `datetime` datetime NOT NULL DEFAULT current_timestamp(),
@@ -197,7 +197,7 @@ CREATE TABLE IF NOT EXISTS `invorderlog` (
 
 -- Structuur van  tabel termuidenmeos.kladblok wordt geschreven
 CREATE TABLE IF NOT EXISTS `kladblok` (
-  `id` int(255) NOT NULL,
+  `id` int(255) NOT NULL AUTO_INCREMENT,
   `userid` int(255) NOT NULL,
   `text` text NOT NULL,
   PRIMARY KEY (`id`)
@@ -209,7 +209,7 @@ CREATE TABLE IF NOT EXISTS `kladblok` (
 
 -- Structuur van  tabel termuidenmeos.livelog wordt geschreven
 CREATE TABLE IF NOT EXISTS `livelog` (
-  `id` int(255) NOT NULL,
+  `id` int(255) NOT NULL AUTO_INCREMENT,
   `agent` varchar(255) NOT NULL,
   `burger` varchar(255) NOT NULL,
   `datetime` datetime NOT NULL DEFAULT current_timestamp(),
@@ -224,7 +224,7 @@ CREATE TABLE IF NOT EXISTS `livelog` (
 
 -- Structuur van  tabel termuidenmeos.pagevisitlog wordt geschreven
 CREATE TABLE IF NOT EXISTS `pagevisitlog` (
-  `id` int(255) NOT NULL,
+  `id` int(255) NOT NULL AUTO_INCREMENT,
   `uri` varchar(255) NOT NULL,
   `ip` varchar(50) NOT NULL,
   `datetime` datetime NOT NULL DEFAULT current_timestamp(),
@@ -241,7 +241,7 @@ CREATE TABLE IF NOT EXISTS `pagevisitlog` (
 
 -- Structuur van  tabel termuidenmeos.rdwlog wordt geschreven
 CREATE TABLE IF NOT EXISTS `rdwlog` (
-  `id` int(255) NOT NULL,
+  `id` int(255) NOT NULL AUTO_INCREMENT,
   `voertuigid` int(255) NOT NULL DEFAULT 0,
   `reason` text DEFAULT NULL,
   `plate` varchar(255) DEFAULT NULL,
@@ -258,7 +258,7 @@ CREATE TABLE IF NOT EXISTS `rdwlog` (
 
 -- Structuur van  tabel termuidenmeos.rdwwok wordt geschreven
 CREATE TABLE IF NOT EXISTS `rdwwok` (
-  `id` int(255) NOT NULL,
+  `id` int(255) NOT NULL AUTO_INCREMENT,
   `voertuigid` int(255) NOT NULL,
   `date` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `reason` text NOT NULL,
@@ -271,7 +271,7 @@ CREATE TABLE IF NOT EXISTS `rdwwok` (
 
 -- Structuur van  tabel termuidenmeos.recherche wordt geschreven
 CREATE TABLE IF NOT EXISTS `recherche` (
-  `id` int(255) NOT NULL,
+  `id` int(255) NOT NULL AUTO_INCREMENT,
   `rechercheur` varchar(255) NOT NULL,
   `notitie` text NOT NULL,
   `datum` datetime NOT NULL DEFAULT current_timestamp(),
@@ -285,7 +285,7 @@ CREATE TABLE IF NOT EXISTS `recherche` (
 
 -- Structuur van  tabel termuidenmeos.shadow_rijbewijzen wordt geschreven
 CREATE TABLE IF NOT EXISTS `shadow_rijbewijzen` (
-  `id` int(255) NOT NULL,
+  `id` int(255) NOT NULL AUTO_INCREMENT,
   `rijbewijzen` text NOT NULL,
   `user_id` int(255) NOT NULL,
   PRIMARY KEY (`id`)
@@ -297,7 +297,7 @@ CREATE TABLE IF NOT EXISTS `shadow_rijbewijzen` (
 
 -- Structuur van  tabel termuidenmeos.specialisaties wordt geschreven
 CREATE TABLE IF NOT EXISTS `specialisaties` (
-  `id` int(255) NOT NULL,
+  `id` int(255) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL DEFAULT '0',
   `short` varchar(255) NOT NULL DEFAULT '0',
   `docent` varchar(255) NOT NULL DEFAULT '0',
@@ -316,7 +316,7 @@ CREATE TABLE IF NOT EXISTS `specialisaties` (
 
 -- Structuur van  tabel termuidenmeos.specialisatie_aanmeldingen wordt geschreven
 CREATE TABLE IF NOT EXISTS `specialisatie_aanmeldingen` (
-  `id` int(255) NOT NULL,
+  `id` int(255) NOT NULL AUTO_INCREMENT,
   `specialisatie` int(255) NOT NULL,
   `user` int(255) NOT NULL,
   PRIMARY KEY (`id`)
@@ -328,7 +328,7 @@ CREATE TABLE IF NOT EXISTS `specialisatie_aanmeldingen` (
 
 -- Structuur van  tabel termuidenmeos.users wordt geschreven
 CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(255) NOT NULL,
+  `id` int(255) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `status` enum('inactive','active') NOT NULL,
@@ -346,10 +346,12 @@ CREATE TABLE IF NOT EXISTS `users` (
   `secKey` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `Index 2` (`secKey`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- Dumpen data van tabel termuidenmeos.users: ~0 rows (ongeveer)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` (`id`, `username`, `password`, `status`, `role`, `rang`, `name`, `specialisaties`, `last_login`, `2fa`, `salt`, `trainer`, `cjib`, `pin`, `app`, `secKey`) VALUES
+	(1, 'admin', '$2y$10$kxpXZ8boxuNzuIk4awyVQeMzPU11klDGGaj/JxtpG7GrVq8qAy09O', 'active', 'admin', 'Aspirant', 'K. Hollander', NULL, NULL, NULL, NULL, 0, 0, NULL, '0', NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
