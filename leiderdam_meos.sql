@@ -75,13 +75,6 @@ CREATE TABLE `anotitie` (
 -- Gegevens worden geëxporteerd voor tabel `anotitie`
 --
 
-INSERT INTO `anotitie` (`id`, `user_id`, `text`, `date`) VALUES
-(9, 195, 'Koen kan vrij weinig\r\n', '2020-04-05 16:56:55'),
-(16, 226, 'Beste collega\'s,\r\nIn het vervolg graag signaleringen, aanhoudingen & grotere zaken bespreken met een ovj en deze goed vastleggen in het MEOS zodat iedereen duidelijk op de hoogte is.\r\nIk ben te bereiken via 0639725170 of Opzuigkapje#7910 via de discord app op jullie diensttelefoon.\r\nAlvast bedankt, Keep up the good work!', '2020-06-08 11:13:46'),
-(18, 226, 'Beste Collega\'s, Het gebeurd te vaak dat mensen boetes krijgen, en hier geen notitie van wordt gemaakt, Dit is wel vereist! Op die manier kunnen wij bijhouden of er andere maatregelen moeten plaatsvinden, of er terecht is gehandeld, en of bijvoorbeeld het in beslag nemen van een voertuig legitiem is. Gebeurd dit te vaak zal een gesprek met je korpsleiding volgen.', '2020-06-10 18:56:23'),
-(19, 15, 'OPSPORINGSBERICHT: Op grond van verdenkingen van het rijden zonder rijbewijs van de Clown-bussen (dat zijn journalisten die items maken over de politie) verzoek ik eenieder hen staande te houden bij aantreffen, op grond van verdenking van overtreden van art. 107 WvW - notitie gemaakt in overleg met operationele leiding (OVD) Mark, Commissaris van de politie.', '2020-06-11 22:04:06');
-
--- --------------------------------------------------------
 
 --
 -- Tabelstructuur voor tabel `app_activations`
@@ -309,11 +302,6 @@ CREATE TABLE `rdwwok` (
 -- Gegevens worden geëxporteerd voor tabel `rdwwok`
 --
 
-INSERT INTO `rdwwok` (`id`, `voertuigid`, `date`, `reason`) VALUES
-(3, 61, '2020-06-11 14:30:31', 'Voertuig heeft geen kenteken plaat.'),
-(4, 49, '2020-06-15 18:52:53', 'Voertuig is in beslag genomen. Ter waarheidsvinding, verdachte is erna echter weggevlucht. '),
-(5, 78, '2020-07-21 19:13:34', '.');
-
 -- --------------------------------------------------------
 
 --
@@ -410,8 +398,7 @@ INSERT INTO `users` (`id`, `username`, `password`, `status`, `role`, `rang`, `na
 --
 -- Indexen voor tabel `aangifte`
 --
-ALTER TABLE `aangifte`
-  ADD PRIMARY KEY (`id`);
+
 
 --
 -- Indexen voor tabel `aangifte_old`
@@ -662,6 +649,9 @@ ALTER TABLE `specialisatie_aanmeldingen`
 ALTER TABLE `users`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 COMMIT;
+
+ALTER TABLE `aangifte`
+  ADD PRIMARY KEY (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
